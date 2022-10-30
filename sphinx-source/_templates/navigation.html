@@ -1,0 +1,11 @@
+{#
+    idio/_templates/layout.html
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Reduced navigation excluding theme_extra_nav_links (which are in
+    the header)
+
+#}
+
+<h3>{{ _('Idio By Example') }}</h3>
+{{ toctree(includehidden=theme_sidebar_includehidden, collapse=theme_sidebar_collapse) }}
