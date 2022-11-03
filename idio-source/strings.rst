@@ -191,4 +191,35 @@ words.  You can, of course, be more exacting than that.
    right-stripped string is  '  hello	world'
    double-stripped string is 'hello	world'
 
+********************
+Interpolated Strings
+********************
+
+:lname:`Idio` strings are not interpolated (a bit like the shell's
+single-quoted strings) but we have frequent need for interpolated
+strings.
+
+Here we can go one better and not just allow the expansion of a
+variable but the expansion of an expression.
+
+Interpolated strings are encoded as ``#S{...${expr}...}`` where
+everything between the outermost matching ``{`` and ``}`` are scanned
+for instances of the *interpolation sigil*, ``$``. A matching set of
+``{`` and ``}`` is read in and the expression therein is evaluated,
+the result being converted to a string (if required) and replacing the
+interpolated expression. The rest of the string is added in a similar
+way.
+
+.. code-block:: idio
+   :caption: :file:`interpolated-string.idio`
+
+   printf #S{Your SHELL is ${SHELL} (${string-length SHELL} code points)\n}
+
+.. code-block:: console
+
+   $ idio interpolated-string
+   Your SHELL is /bin/bash (9 code points)
+
+Interpolated strings are used very heavily in code generation.
+
 .. include:: ./commit.rst

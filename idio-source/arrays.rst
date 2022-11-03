@@ -50,6 +50,10 @@ greater than the array's length).
    a3 := #[ "romanes" "eunt" "domus" ]
    printf "a3 is %d elements: %s\n" (array-length a3) a3
 
+   ;; you can use evaluated elements with array
+   a4 := array a3.0 a3.1 a3.2
+   printf "a4 is %d elements: %s\n" (array-length a4) a4
+
 .. code-block:: console
 
    $ idio simple-arrays
@@ -60,5 +64,6 @@ greater than the array's length).
    a1.-1 is countrymen
    a2 is 3 elements: #[ a1 . 1 ]
    a3 is 3 elements: #[ "romanes" "eunt" "domus" ]
+   a4 is 3 elements: #[ "romanes" "eunt" "domus" ]
 
 .. include:: ./commit.rst

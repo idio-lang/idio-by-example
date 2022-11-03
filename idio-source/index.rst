@@ -26,6 +26,7 @@ language?
    arrays
    hash-tables
    structs
+   bitsets
    commands
    variables
    blocks
@@ -37,8 +38,13 @@ language?
    functions
    closures
    recursion
+   regexps
+   sorting
    errors
    file-handles
    string-handles
+   loading
+   IDIOLIB
+   modules
 
 .. include:: ./commit.rst

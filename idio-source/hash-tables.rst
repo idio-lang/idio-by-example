@@ -43,6 +43,12 @@ values.  The only value you cannot use as a key  is ``#n``.
 
    hash-walk h1 walker
 
+   ;; static construction (using key/value pairs) does not allow
+   ;; evaluation of elements so just "self-evaluating" constants,
+   ;; numbers and strings.
+   h2 := #{ ('c & (hash-ref h1 'c)) }
+   printf "h2 is %d elements: %s\n" (hash-size h2) h2
+
 .. code-block:: console
 
    $ idio simple-hash-tables
@@ -56,6 +62,7 @@ values.  The only value you cannot use as a key  is ``#n``.
    a maps to apple
    c maps to carrot
    b maps to banana
+   h2 is 1 elements: #{ ('c & (hash-ref h1 'c))}
 
 .. note::
 
