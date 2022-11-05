@@ -102,4 +102,14 @@ in the less elegant output:
    -rw-rw-r--. 1 idf idf 1053943 Nov  2 16:12 utils/Unicode/DerivedCoreProperties.txt
    -rw-rw-r--. 1 idf idf 1913704 Nov  2 16:12 utils/Unicode/UnicodeData.txt
 
+.. tip::
+
+   These functions will always use ``C/<`` resulting in an ascending
+   order.  You can trivially get the descending order by reversing the
+   list:
+
+   .. code-block:: idio
+
+      sorted-files := reverse! (sort-size files)
+
 .. include:: ./commit.rst

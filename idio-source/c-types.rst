@@ -39,7 +39,7 @@ reference a ``libc/pid_t`` [#]_ throughout.  The functions expecting a
        them.  In this case, ``pid_t`` becomes ``libc/pid_t``.
 
 Many :lname:`Idio` functions wrapping :lname:`C` library functions
-return "pointers" to structs (often where in :lname:`C` a pointer to
+return "pointers" to structs (often where, in :lname:`C`, a pointer to
 such a struct would have been passed to the library function as an
 argument).  These are :lname:`Idio` values containing the underlying
 :lname:`C` type so, here, a ``C/pointer``.

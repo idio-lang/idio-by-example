@@ -46,5 +46,7 @@ language?
    loading
    IDIOLIB
    modules
+   JSON
+   IOS
 
 .. include:: ./commit.rst

@@ -4,10 +4,6 @@
 If/Else
 #######
 
-**
-If
-**
-
 The basic conditional expression is ``if`` which takes two or three
 expressions:
 

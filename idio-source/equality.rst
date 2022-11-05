@@ -10,7 +10,7 @@ mean by "the same"?
 
 #. are they the same location *in memory*?
 
-   We can test any two objects for exact equivalence with ``eq?``.
+   We can test any two values for exact equivalence with ``eq?``.
 
 #. for some values (numbers and strings, say) they might be in
    different locations in memory but they have the same value: ``1``
@@ -18,7 +18,7 @@ mean by "the same"?
    and each Unicode code point is the same in each index of the
    strings then they are "the same"
 
-   We can test any two objects for value equivalence with ``eqv?``.
+   We can test any two values for value equivalence with ``eqv?``.
 
 #. Finally, for compound values, we can test if they are
    *semantically* the same with ``equal?``.
@@ -26,7 +26,7 @@ mean by "the same"?
    The Scheme R5RS standards suggests "do they print the same?"
 
    This woolly definition reflects the tricky problem of accessing the
-   elements of compound objects in a consistent manner.
+   elements of compound values in a consistent manner.
 
 .. code-block:: idio
    :caption: :file:`equality.idio`

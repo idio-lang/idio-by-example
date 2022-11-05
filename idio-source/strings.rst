@@ -19,7 +19,7 @@ code point.
 There are a limited number of ``#\{newline}`` *named* characters
 
 .. code-block:: idio
-   :caption: :file:`unicode.idio`
+   :caption: :file:`code-points.idio`
 
    ;; ħ is U+0127 LATIN SMALL LETTER H WITH STROKE
    c1 := #U+127
@@ -27,24 +27,24 @@ There are a limited number of ``#\{newline}`` *named* characters
    c2 := #\ħ
 
    ;; the unicode type is much like fixnum and can be compared with eqv?
-   printf "Does ``%s'' eqv? ``%s''? %s\n" c1 c2 (eqv? c1 c2)
+   printf "Does <<%s>> eqv? <<%s>>? %s\n" c1 c2 (eqv? c1 c2)
 
    ;; SPACE
    c1 = #U+20
 
-   ;; or using an escape sequence
+   ;; or using a named character
    c2 = #\{space}
 
-   printf "Does ``%s'' eqv? ``%s''? %s\n" c1 c2 (eqv? c1 c2)
+   printf "Does <<%s>> eqv? <<%s>>? %s\n" c1 c2 (eqv? c1 c2)
 
    ;; tell me what you know!
    unicode/describe c1
 
 .. code-block:: console
 
-   $ idio unicode
-   Does ``ħ'' eqv? ``ħ''? #t
-   Does `` '' eqv? `` ''? #t
+   $ idio code-points
+   Does <<ħ>> eqv? <<ħ>>? #t
+   Does << >> eqv? << >>? #t
    0020;;Zs;;;;;;;;;;;; # Separator White_Space 
 
 *******
@@ -69,7 +69,7 @@ Multi-line strings are perfectly reasonable.
    s2 := "hello
    world"
 
-   printf "Does ``%s'' equal? ``%s''? %s\n" s1 s2 (equal? s1 s2)
+   printf "Does <<%s>> equal? <<%s>>? %s\n" s1 s2 (equal? s1 s2)
 
    ;; enter one directly (source files are UTF-8)
    s1 = "ħello"
@@ -77,7 +77,7 @@ Multi-line strings are perfectly reasonable.
    ;; or using an escape sequence
    s2 = "\u0127ello"
 
-   printf "Does ``%s'' equal? ``%s''? %s\n" s1 s2 (equal? s1 s2)
+   printf "Does <<%s>> equal? <<%s>>? %s\n" s1 s2 (equal? s1 s2)
 
    ;; Note that you only need pass as many hex digits as necessary to
    ;; distinguish the code point so long as the following characters are
@@ -99,10 +99,10 @@ Multi-line strings are perfectly reasonable.
 .. code-block:: console
 
    $ idio strings
-   Does ``hello
-   world'' equal? ``hello
-   world''? #t
-   Does ``ħello'' equal? ``ħello''? #t
+   Does <<hello
+   world>> equal? <<hello
+   world>>? #t
+   Does <<ħello>> equal? <<ħello>>? #t
    0065;;Ll;;;;;;;;;;0045;;0045 # Letter Lowercase Alphabetic ASCII_Hex_Digit Uppercase=0045 Titlecase=0045 
    0301;;Mn;;;;;;;;;;;; # Mark Extend 
 
@@ -113,8 +113,8 @@ You can make integer-index accesses of strings which return Unicode
 code points.
 
 You can capture substrings of strings from an index position
-:samp:`{p0}` through to but excluding another index position (which
-defaults to the string's length).
+:samp:`{p0}` through to but excluding another index position
+(defaulting to the rest of the string).
 
 .. code-block:: idio
    :caption: :file:`string-access.idio`
@@ -170,7 +170,7 @@ words.  You can, of course, be more exacting than that.
    s1 := "  hello	world  "
 
    words := split-string s1 " \t"
-   printf "words  are %s\n" words
+   printf "words are %s\n" words
 
    ;; fields is similar but uses IFS as the delimiter (which defaults to
    ;; the usual " \t\n") and returns an array with the first element

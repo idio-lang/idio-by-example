@@ -32,7 +32,7 @@ Alternatively, replacing ``sleep 1`` with a call to the external
 command ``false``:
 
 .. code-block:: idio
-   :caption: :file:`print-false.idio`
+   :caption: :file:`print-false-1.idio`
 
    printf "false is %s\n" (false)
 
@@ -48,7 +48,7 @@ Here, you'll see:
 
 .. code-block:: console
 
-   $ idio print-false
+   $ idio print-false-1
 
 Nothing!
 
@@ -58,7 +58,7 @@ and the default behaviour of :lname:`Idio` is much like enabling ``set
 first line out:
 
 .. code-block:: idio
-   :caption: :file:`print-false.idio`
+   :caption: :file:`print-false-2.idio`
 
    ;printf "false is %s\n" (false)
 
@@ -74,7 +74,7 @@ Here, you'll see:
 
 .. code-block:: console
 
-   $ idio print-false
+   $ idio print-false-2
    definitely false!
    done falsifying!
 

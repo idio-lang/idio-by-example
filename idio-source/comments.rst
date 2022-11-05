@@ -87,9 +87,10 @@ Semi-Literate Comments
 ======================
 
 With a nod toward's Knuth's Literate Programming, :lname:`Idio`
-support semi-literate comments which are ``#|`` (and a newline)
-through to a (matching) ``|#``.  This idea has gone no further so
-please don't use them.
+support semi-literate comments which are ``#|`` (up to a newline)
+through to a (matching) ``|#``.  The text after the ``#|`` would
+describe some mechanism for processing the body of the semi-literate
+comment.  This idea has gone no further so please don't use them.
 
 Semi-literate comments behave similarly to block comments, including
 nesting and both types are mutually aware.  The idea, here, is that

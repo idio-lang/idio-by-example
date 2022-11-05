@@ -7,7 +7,8 @@ Regexps
 :lname:`Idio` uses the POSIX :manpage:`regex(7)` regular expression
 primitives ``regcomp`` and ``regexec``.
 
-You can use them directly or commonly is variations on the ``case``
+You can use them directly or commonly in variations on the ``cond``
+expression.
 
 **********
 regex-case
@@ -17,10 +18,10 @@ regex-case
 clause "conditions" are regular expressions to be matched.
 
 If the regular expression matches, ``regex-case`` then supplies the
-consequent block with the result of the call to ``regexec`` as the
-variable :var:`r`.  As such :var:`r.0` is the whole of the matched
-string, :var:`r.1` is the first matched sub-expression, :var:`r.2` the
-second matched sub-expression, etc..
+consequent expression with the result of the call to ``regexec`` as
+the variable :var:`r`, an array.  :var:`r.0` is the whole of the
+matched string, :var:`r.1` is the first matched sub-expression,
+:var:`r.2` the second matched sub-expression, etc..
 
 .. code-block:: idio
    :caption: :file:`simple-regex-case.idio`
@@ -47,8 +48,8 @@ pattern-case
 ************
 
 Similarly, ``pattern-case`` provides something like the shell's
-*Pattern Matching* where ``*`` and ``?`` are really ``.*`` and ``.``
-respectively.
+``case`` statement's *Pattern Matching* where ``*`` and ``?`` are
+really ``.*`` and ``.`` respectively.
 
 Note that your pattern string is implicitly anchored to the start and
 end.

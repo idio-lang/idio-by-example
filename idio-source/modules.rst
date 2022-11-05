@@ -68,7 +68,7 @@ then adding the module's exported names into your own namespace.
    provide B
 
 .. code-block:: idio
-   :caption: :file:`simple-module.idio`
+   :caption: :file:`simple-modules.idio`
 
    import A B
    ;; the same effect is achieved with
@@ -85,7 +85,7 @@ then adding the module's exported names into your own namespace.
 
 .. code-block:: console
 
-   $ idio factorial
+   $ idio simple-modules
    A: called A
    B: called B
    A: called?

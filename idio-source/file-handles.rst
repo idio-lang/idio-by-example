@@ -55,7 +55,7 @@ File handles can be created around already existing file descriptors
 and file descriptors can be extracted from file handles.
 
 .. code-block:: idio
-   :caption: :file:`file-names.idio`
+   :caption: :file:`file-descriptors.idio`
 
    fn := "words.txt"
    ofh := open-output-file fn
@@ -85,7 +85,7 @@ and file descriptors can be extracted from file handles.
 
 .. code-block:: console
 
-   $ idio file-names
+   $ idio file-descriptors
    fd is 4 (a C/int)
    words.txt contains this is contents
    fd2 is 4 (a C/int)
