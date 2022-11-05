@@ -10,6 +10,13 @@ primitives ``regcomp`` and ``regexec``.
 You can use them directly or commonly in variations on the ``cond``
 expression.
 
+``regcomp`` defaults to ``REG_EXTENDED`` so there is an additional
+``REG_BASIC`` flag to disable ``REG_EXTENDED``.
+
+``regexec`` has an extra ``REG_VERBOSE`` flag where the elements in
+the results array are lists of the matched sub-expression, its
+starting offset and ending offset (suitable for ``substring``).
+
 **********
 regex-case
 **********

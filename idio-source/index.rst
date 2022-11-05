@@ -48,5 +48,7 @@ language?
    modules
    JSON
    IOS
+   expect
+   shasum
 
 .. include:: ./commit.rst
