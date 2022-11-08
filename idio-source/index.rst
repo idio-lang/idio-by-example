@@ -42,6 +42,9 @@ language?
    sorting
    errors
    file-handles
+   filenames
+   file-predicates
+   path-functions
    string-handles
    loading
    IDIOLIB
