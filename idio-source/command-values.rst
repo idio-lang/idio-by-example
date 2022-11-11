@@ -1,8 +1,8 @@
 .. include:: ./global.rst
 
-########
-Commands
-########
+##############
+Command Values
+##############
 
 One of the primary uses of :lname:`Idio` is to orchestrate commands
 for which the value is the exit status of the command and can be used

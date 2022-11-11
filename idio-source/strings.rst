@@ -1,55 +1,8 @@
 .. include:: ./global.rst
 
-######################
-Strings and Characters
-######################
-
-*******************
-Unicode Code Points
-*******************
-
-The "characters" in strings (and as standalone values) are Unicode
-code points, normally represented by ``#U+...`` for enough hexadecimal
-digits to represent the code point.  Leading zeroes are not required
-(but may be necessary, see below).
-
-You can input a specific character with ``#\X`` for some *X*, a UTF-8
-code point.
-
-There are a limited number of ``#\{newline}`` *named* characters
-
-.. code-block:: idio
-   :caption: :file:`code-points.idio`
-
-   ;; ħ is U+0127 LATIN SMALL LETTER H WITH STROKE
-   c1 := #U+127
-
-   c2 := #\ħ
-
-   ;; the unicode type is much like fixnum and can be compared with eqv?
-   printf "Does <<%s>> eqv? <<%s>>? %s\n" c1 c2 (eqv? c1 c2)
-
-   ;; SPACE
-   c1 = #U+20
-
-   ;; or using a named character
-   c2 = #\{space}
-
-   printf "Does <<%s>> eqv? <<%s>>? %s\n" c1 c2 (eqv? c1 c2)
-
-   ;; tell me what you know!
-   unicode/describe c1
-
-.. code-block:: console
-
-   $ idio code-points
-   Does <<ħ>> eqv? <<ħ>>? #t
-   Does << >> eqv? << >>? #t
-   0020;;Zs;;;;;;;;;;;; # Separator White_Space 
-
-*******
+#######
 Strings
-*******
+#######
 
 Strings are the usual ``"``-delimited sequences of "characters", here,
 Unicode code points.  Normal escape sequences are available: ``\n``,

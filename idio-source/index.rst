@@ -19,6 +19,7 @@ language?
    equality
    constants
    numbers
+   unicode
    strings
    symbols
    c-types
@@ -27,7 +28,7 @@ language?
    hash-tables
    structs
    bitsets
-   commands
+   command-values
    variables
    blocks
    if-else
@@ -46,6 +47,8 @@ language?
    file-predicates
    path-functions
    string-handles
+   reading-handles
+   writing-handles
    loading
    IDIOLIB
    modules

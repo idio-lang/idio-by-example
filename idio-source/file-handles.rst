@@ -31,6 +31,7 @@ system) file descriptors.
    ;; read all remaining lines (which retains any newlines)
    data.1 = read-lines ifh
 
+   ;; good housekeeping
    close-handle ifh
 
    printf "data.0 is %s\n" data.0
@@ -46,6 +47,22 @@ system) file descriptors.
 :samp:`open-output-file {file}` is the equivalent of :samp:`open-file
 {file} "we"` using :manpage:`fopen(3)`-style mode flags and
 ``open-input-file`` similarly uses ``"re"`` mode flags.
+
+********************
+Closing File Handles
+********************
+
+As with all relatively scarce operating system resources, we should
+explicitly close file handles otherwise we'll gradually consume all of
+the file descriptors available to the process.
+
+File handles will be implicitly closed when they are garbage collected
+although that requires that the value be garbage collectable.  In the
+previous example, we assigned the file handle to the top level
+variable :var:`ifh` which means that, unless we explicitly called
+``close-handle`` (which we did), the value would hang about and,
+therefore, the file descriptor would remain open for the lifetime of
+the process.
 
 ****************
 File Descriptors

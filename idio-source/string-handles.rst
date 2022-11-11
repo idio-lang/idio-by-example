@@ -17,21 +17,39 @@ Having written to an output string handle we must call
 compare with this having to run :program:`cat` to retrieve the output
 you had written to a file.
 
+.. code-block:: idio
+   :caption: :file:`input-string-handles.idio`
+
+   ;; normally the input string would not be static
+   ish := open-input-string "hello\nworld\n"
+
+   printf "line 1 is %s\n" (read-line ish)
+   printf "line 2 is %s\n" (read-line ish)
+
+   ;; good housekeeping
+   close-handle ish
+
+.. code-block:: console
+
+   $ idio input-string-handles
+   line 1 is hello
+   line 2 is world
+
 Let's try reading from a regular file, writing it out to a string
 handle then printing the content of the string handle.
 
 .. warning::
 
-   This assumes that :file:`string-handles.idio` is in the current
+   This assumes that :file:`output-string-handles.idio` is in the current
    directory.  Adjust as appropriate for your system.
 
    Ordinary files are not searched for on :envvar:`IDIOLIB`.
 
 .. code-block:: idio
-   :caption: :file:`string-handles.idio`
+   :caption: :file:`output-string-handles.idio`
 
    ;; open ourselves -- inception!
-   fh := open-input-file "string-handles.idio"
+   fh := open-input-file "output-string-handles.idio"
 
    ;; create our destination string
    osh := (open-output-string)
@@ -55,9 +73,9 @@ handle then printing the content of the string handle.
 
 .. code-block:: console
 
-   $ idio string-handles
+   $ idio output-string-handles
    line  1: ;; open ourselves -- inception!
-   line  2: fh := open-input-file "string-handles.idio"
+   line  2: fh := open-input-file "output-string-handles.idio"
    line  3: 
    line  4: ;; create our destination string
    line  5: osh := (open-output-string)

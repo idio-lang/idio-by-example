@@ -32,6 +32,8 @@ Null
 ``#n`` is the common "null" value.  It is primarily used as a sentinel
 value, notably marking the end of a proper list.
 
+You can test if a value is ``#n`` with the ``null?`` predicate.
+
 *************
 Result Values
 *************
@@ -44,10 +46,16 @@ pseudo-error values.
 * ``#<unspec>`` is returned when there is no otherwise useful value to
   return
 
-* ``#<void>`` is returned when no computation has taken place
+* ``#<void>`` is returned when no computation has taken place,
+  notably, when a conditional expression has no fallback "else"
+  clause.
+
+  You can test for this value with the ``void?`` predicate.
 
 * ``#<eof>`` is returned by reading functions when the end of a handle
   is reached
+
+  You can test for this value with the ``eof?`` predicate.
 
 These printed formats are of the form ``#<...>`` where we might get
 something intelligible to humans in between the angle brackets.  These

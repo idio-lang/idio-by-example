@@ -86,7 +86,7 @@ avoid clashing with the similar external commands):
 
 .. code-block:: console
 
-   $ idio simple-path-mods
+   $ idio simple-cd
    pwd: /tmp/a/b/c/d
    PWD: /tmp/a/b/c/d
    .  is /tmp/a/b/c/d
