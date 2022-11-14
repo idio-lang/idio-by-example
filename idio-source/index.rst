@@ -49,6 +49,7 @@ language?
    string-handles
    reading-handles
    writing-handles
+   temporary-files
    loading
    IDIOLIB
    modules
@@ -56,5 +57,19 @@ language?
    IOS
    expect
    shasum
+
+.. raw:: html
+
+   <hr>
+
+.. toctree::
+   :maxdepth: 1
+
+   commands
+   redirection
+   pipelines
+   collecting-output
+   piping-commands
+   command-errors
 
 .. include:: ./commit.rst

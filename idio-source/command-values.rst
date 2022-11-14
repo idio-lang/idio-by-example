@@ -19,8 +19,6 @@ as a boolean in (logical) expressions.
 
    printf "done sleeping!\n"
 
-Here, you'll see:
-
 .. code-block:: console
 
    $ idio print-sleep
@@ -43,8 +41,6 @@ command ``false``:
    }
 
    printf "done falsifying!\n"
-
-Here, you'll see:
 
 .. code-block:: console
 
@@ -69,8 +65,6 @@ first line out:
    }
 
    printf "done falsifying!\n"
-
-Here, you'll see:
 
 .. code-block:: console
 

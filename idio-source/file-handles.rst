@@ -10,6 +10,12 @@ We can create input (to be read from) and output (to be written to)
 file handles and can create file handles from existing (operating
 system) file descriptors.
 
+.. note::
+
+   File handles are one of the variants of *fd* (file descriptor)
+   handles.  These are wrappers around the underlying operating system
+   entity.
+
 .. code-block:: idio
    :caption: :file:`file-handles.idio`
 
