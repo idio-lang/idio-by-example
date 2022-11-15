@@ -71,5 +71,8 @@ language?
    collecting-output
    piping-commands
    command-errors
+   logical-exprs
+   environment
+   subshells
 
 .. include:: ./commit.rst
