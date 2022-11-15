@@ -14,9 +14,11 @@ Pipelines are implemented with another reader operator.
    We could escape this from the reader with ``\-`` however, when the
    arguments come to be expanded into string arguments for the
    external command, ``-`` is recognised as a function which has no
-   string form.
+   string form suitable for an external command's arguments.
 
    As a result we want to force the use of the symbol with ``'-``.
+
+   Alternatively, you could have used :file:`/dev/fd/0`.
 
 .. code-block:: idio
    :caption: :file:`simple-pipeline.idio`
@@ -64,7 +66,7 @@ To background a job use the ``bg-job`` prefix:
    ;; do some background processing ourselves...
    libc/sleep 2
 
-   ;; report on all backgrounded jobs
+   ;; report on all extant jobs
    (jobs)
 
    ;; display Idio's elapsed time
@@ -87,9 +89,9 @@ To background a job use the ``bg-job`` prefix:
    t+3s
    t+6s
 
-``jobs`` displays some status information about the backgrounded jobs.
-Each job is considered a pipeline of processes, albeit a single
-process in this example.
+``jobs`` displays some status information about the outstanding jobs.
+Each job is a pipeline of processes, albeit a single process in this
+example.
 
 .. note::
 
@@ -133,11 +135,16 @@ convenient debug than extracting the information from the job's data.
 
 .. note::
 
-   A job's timings are reported as part of the job notification
-   mechanisms.  If the pipeline is the last expression in a script
-   (and does not fail), as might have been the case here, then there
-   is little chance for the notification mechanisms to fire before
-   :lname:`Idio` shuts down.
+   A job's timings are kept in the job's structure.  They are
+   *reported* as part of the job notification mechanisms.  For an
+   interactive shell this is commonly just before the prompt is
+   printed.  In a script, the notification mechanism is not so
+   regimented.
+
+   If the pipeline is the last expression in a script (and does not
+   fail), as might have been the case here, then there is little
+   chance for the notification mechanisms to fire before :lname:`Idio`
+   shuts down.
 
    Calling ``wait`` will usually cause the notification mechanisms to
    fire.

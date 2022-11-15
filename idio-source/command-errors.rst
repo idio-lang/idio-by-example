@@ -8,8 +8,8 @@ By default, :lname:`Idio` will exit with the same exit status as any
 external command that fails (including signals).  This aggressive
 nature is deliberate.
 
-That can be inconvenient so you can suppress various aspects of this
-behaviour.
+Some *filthy casuals* might consider that to be inconvenient so you
+can suppress various aspects of this behaviour.
 
 For each of these examples you can try running with the value set to
 ``#f``, the default, or ``#t`` by removing the comment character
@@ -19,7 +19,7 @@ For each of these examples you can try running with the value set to
 suppress-pipefail!
 ******************
 
-This is much like the inverse of the shell's ``set -o pipefail``
+This is much like the *inverse* of the shell's ``set -o pipefail``
 setting.  It defaults to ``#f``, ie. :lname:`Idio` will fail if any of
 the processes in a pipeline fail.
 
@@ -54,7 +54,7 @@ the processes in a pipeline fail.
 suppress-exit-on-error!
 ***********************
 
-This is much like the inverse of the shell's ``set -e`` (and ``set
+This is much like the *inverse* of the shell's ``set -e`` (and ``set
 -E`` if available) setting, defaulting to ``#f``, ie. :lname:`Idio`
 will fail if the last process in a pipeline fails.
 
@@ -128,6 +128,9 @@ by default.
 		
 .. note::
 
-   Asynchronous commands *are* given a Process Group ID.
+   #. "racse" stands for Report Asynchronous Command Status Error
+
+   #. Asynchronous commands *are* given a Process Group ID even in
+      scripts
 
 .. include:: ./commit.rst

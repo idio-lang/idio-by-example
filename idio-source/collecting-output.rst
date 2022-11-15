@@ -6,7 +6,7 @@ Collecting Output
 
 ``collect-output`` is a pipeline meta-command which returns the
 command's output as a string with any trailing newlines removed.  This
-is the equivalent to the shell's ``$(...)`` *Command Substitution*.
+is the equivalent to the shell's *Command Substitution*, ``$(...)``.
 
 .. code-block:: idio
    :caption: :file:`collect-output.idio`
@@ -32,9 +32,10 @@ Asynchronous Commands
 *********************
 
 The job being run for ``collect-output`` is termed an *asynchronous
-command*.  Whether it succeeds or fails does not affect whether
-:lname:`Idio` chooses to exit itself as it is not on the critical path
-of :lname:`Idio` itself.
+command*.  Whether an asynchronous command succeeds or fails does not
+affect whether :lname:`Idio` chooses to exit because of command
+failure as the asynchronous command is not on the critical path of
+:lname:`Idio` itself.
 
 :lname:`Idio` will, by default, issue a report if an asynchronous
 command fails.

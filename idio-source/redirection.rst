@@ -9,7 +9,9 @@ familiar ``>`` etc..  Remember that, in :lname:`Idio`, whitespace is
 important as ``>`` can be part of a valid symbol.
 
 These are implemented by changing the current *input*, *output* or
-*error* handle from or to some entity.
+*error* handle from or to some entity.  When we reach the point of
+trying to invoke an external command the current input, output and
+error handles will be transformed into suitable file descriptors.
 
 .. note::
 

@@ -15,8 +15,9 @@ cannot seek on a pipe handle.
 The other two, ``named-pipe-from`` and ``named-pipe-into``, will
 return the name of a file that can be opened for reading or writing
 respectively.  This is the equivalent of :lname:`Bash`'s *Process
-Substitution*.  Most operating systems will use the
-:file:`/dev/fd/{n}`-style of filename but some will use real FIFOs.
+Substitution*, ``<(...)`` and ``>(...)``.  Most operating systems will
+use the :file:`/dev/fd/{n}`-style of filename but some will use real
+FIFOs.
 
 ************
 pipe variant
@@ -51,10 +52,10 @@ pipe variant
 
 .. note::
 
-   This example has the asynchronous command at the end of the script
-   meaning :lname:`Idio` is likely to kill it as it exits before the
-   command prints anything.  We need a call to ``wait`` to ensure it
-   gets a chance to run to completion.
+   These examples have the asynchronous command at the end of the
+   script meaning :lname:`Idio` is likely to kill it as it exits
+   before the asynchronous command prints anything.  We need a call to
+   ``wait`` to ensure it gets a chance to run to completion.
 
 ******************
 named-pipe variant
