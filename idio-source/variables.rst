@@ -48,12 +48,11 @@ Notice that ``e`` became bound to the same value that
 same way, ``(e)``, to return the value.
 
 Subsequently, you can re-bind a variable to a different value using
-the ``=`` operator.  Re-binding variables would generally be frowned
-upon but it is convenient for conditionally assigned variables in
-functions, say:
+the ``=`` operator.  Re-binding variables might be frowned upon in
+certain circles but it is common enough in many paradigms:
 
 .. code-block:: idio
-   :caption: :file:`conditional-assignment.idio`
+   :caption: :file:`re-assignment.idio`
 
    define (foo a) {
 
@@ -71,11 +70,12 @@ functions, say:
 
 .. code-block:: console
 
-   $ idio conditional-assignment
+   $ idio re-assignment
    10 is positive
    -10 is negative
 
-``if`` returns a value so we could have defined ``foo`` as:
+``if``, like all expressions, returns a value so we could have defined
+``foo`` as:
 
 .. code-block:: idio
 
@@ -86,7 +86,8 @@ functions, say:
      printf "%d is %s\n" a desc
    }
 
-or not even created the local variable, ``desc``.
+or not even created the local variable, ``desc`` and put the ``if``
+expression (in parentheses) on the end of the ``printf`` expression.
 
 Readability is always a concern.
 

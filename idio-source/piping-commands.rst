@@ -6,11 +6,12 @@ Piping To/From Commands
 
 It is often useful to be able to either write data to an external
 command or read data from an external command.  For this there are
-four *pipe* asynchronous command forms.
+four *pipe* meta-commands.  All create asynchronous commands.
 
 Two, ``pipe-into`` and ``pipe-from``, will return a *pipe handle*.
 This is another variation on an *fd handle*.  As you might expect, you
-cannot seek on a pipe handle.
+cannot seek on a pipe handle because you can't seek on the underlying
+pipe file descriptor.
 
 The other two, ``named-pipe-from`` and ``named-pipe-into``, will
 return the name of a file that can be opened for reading or writing

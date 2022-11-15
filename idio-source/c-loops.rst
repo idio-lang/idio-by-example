@@ -34,8 +34,8 @@ time round.
    :caption: :file:`simple-C-for.idio`
 
    C/for (
-	  (i 0 (i + 1))
-   ) (i lt 5) {
+           (i 0 (i + 1))
+         ) (i lt 5) {
      printf "i is %d\n" i
    }
 
@@ -80,7 +80,7 @@ while
 break / continue
 ****************
 
-The keywords ``break`` and ``continue`` are available in the
+The functions ``break`` and ``continue`` are available in the
 :samp:`{body}` element of both ``C/for`` and ``while``:
 
 .. code-block:: idio

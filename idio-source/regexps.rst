@@ -7,7 +7,7 @@ Regexps
 :lname:`Idio` uses the POSIX :manpage:`regex(7)` regular expression
 primitives ``regcomp`` and ``regexec``.
 
-You can use them directly or commonly in variations on the ``cond``
+You can use them directly or commonly in variations on the ``case``
 expression.
 
 ``regcomp`` defaults to ``REG_EXTENDED`` so there is an additional
@@ -21,7 +21,7 @@ starting offset and ending offset (suitable for ``substring``).
 regex-case
 **********
 
-``regex-case`` which works like a simplified ``cond`` except the
+``regex-case`` which works like a simplified ``case`` except the
 clause "conditions" are regular expressions to be matched.
 
 If the regular expression matches, ``regex-case`` then supplies the

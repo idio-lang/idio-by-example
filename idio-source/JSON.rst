@@ -32,7 +32,7 @@ The :lname:`Idio` source contains the example test files from
    printf "data is %s\n" data
    printf "andIn is %s\n" data."andIn"
 
-With the output chopped for readability:
+With the output edited for readability:
 
 .. code-block:: console
 
@@ -85,7 +85,7 @@ and JSON from it.
    printf "JSON5 is %s\n" json5-str
    printf "JSON is the same? %s\n" (equal? json5-str (generate-json data))
 
-The output has been chopped for readability:
+The output has been edited for readability:
 
 .. code-block:: console
 
@@ -137,7 +137,7 @@ the elements are beyond the capabilities of JSON).  and JSON from it.
 
    printf "JSON5 is %s\n" (generate data)
 
-The output has been chopped for readability:
+The output has been edited for readability:
 
 .. code-block:: console
 

@@ -9,10 +9,13 @@ output handle, file, string etc.).
 
 Hiding in plain sight has been that ``printf`` has been implicitly
 writing to the "current output handle".  Here, ``printf ...`` is a
-simple wrapper to ``hprintf (current-output-handle) ...`` where
-``hprintf`` is like :manpage:`fprintf(3)` in that it takes a handle as
-a parameter.  Similarly, ``eprintf`` sends its output to the current
-error handle.
+simple wrapper to
+
+``hprintf (current-output-handle) ...``
+
+where ``hprintf`` is like :manpage:`fprintf(3)` in that it takes a
+handle as a parameter.  Similarly, ``eprintf`` sends its output to the
+current error handle.
 
 * ``write-char`` writes one Unicode code point to the handle
 

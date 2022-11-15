@@ -10,7 +10,7 @@ entities but also *strings* which is more unusual.
 
 We can create input (to be read from) and output (to be written to)
 string handles which can subsequently be manipulated almost
-identically to regular I/O.
+identically to regular I/O handles.
 
 Having written to an output string handle we must call
 ``get-output-string`` to get the accumulated string back.  You might

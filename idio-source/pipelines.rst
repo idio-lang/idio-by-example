@@ -48,10 +48,10 @@ Pipelines are implemented with another reader operator.
 Meta-Commands
 *************
 
-:lname:`Idio` supports some *meta-commands* for running external
-commands.  Meta-commands are prefixes.  We'll look at a couple here.
-Other meta-commands deal with managing the input and output of the
-pipeline.
+:lname:`Idio` supports some *meta-commands* when running external
+commands.  Meta-commands are prefixes to the pipeline.  We'll look at
+a couple here.  Other meta-commands deal with managing the input and
+output of the pipeline which are covered in later examples.
 
 bg-job
 ======
@@ -95,10 +95,10 @@ example.
 
 .. note::
 
-   The ``0`` is slightly disingenuous as it is the Process Group ID of
-   the job, which is only set for an interactive shell.
+   The ``job 0`` is slightly disingenuous as it is the Process Group
+   ID of the job, which is only set for an interactive shell.
 
-   You can test that with:
+   You can validate that with something like:
 
    .. code-block:: console
 

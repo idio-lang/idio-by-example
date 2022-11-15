@@ -5,7 +5,7 @@ Arrays
 ######
 
 Arrays are integer-indexed collections of references to values.  You
-can only access existing indices and you can only grow or shrink and
+can only access existing indices and you can only grow or shrink an
 array by amending the start or end of the array.
 
 The index can be negative to access elements from the end of the

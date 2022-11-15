@@ -136,9 +136,9 @@ just ``do this``.
 Lists
 *****
 
-:lname:`Idio` is nominally as *Lisp* in that everything is treated as
-a list (of expressions).  There are no expression delimiters (other
-than whitespace).
+:lname:`Idio` is nominally a *Lisp* in that everything is treated as a
+list (of expressions).  There are no expression delimiters other than
+whitespace.
 
 The first expression is expected to resolve to a function and the
 remaining expressions are evaluated and passed as arguments to that

@@ -12,8 +12,8 @@ numbers, strings or lists of those.
 Any of the function or arguments can be a variable, so long as it
 evaluates to a symbol, string, etc..
 
-Other :lname:`Idio` values, eg. ``#f`` have no sensible string form to
-pass to an external command and the use of them will result in an
+Other :lname:`Idio` values, eg. ``#f``, have no sensible string form
+to pass to an external command and the use of them will result in an
 error.
 
 .. code-block:: idio
@@ -35,7 +35,9 @@ List Arguments
 **************
 
 If any of the arguments is a list they will be expanded out (by one
-level) *in situ*:
+level) *in situ*.  This is the only time in :lname:`Idio` where the
+number of words in the source code differs from the number of words
+passed as arguments (to the external command):
 
 .. code-block:: idio
    :caption: :file:`list-argument.idio`

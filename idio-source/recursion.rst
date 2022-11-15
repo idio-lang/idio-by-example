@@ -35,7 +35,7 @@ Here's the factorial function:
 	       178922222789623703897374720000000000000000000000000000000000
 	       000000000000000
 
-(Yes, that result is 375 digits long and been chopped to fit the screen.)
+(Yes, that result is 375 digits long and been edited to fit the screen.)
 
 **********************
 Tail Call Optimisation

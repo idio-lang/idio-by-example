@@ -4,8 +4,13 @@
 For Style Loops
 ###############
 
-:lname:`Idio` supports the *for each* style of looping over compound
-values.
+:lname:`Idio` supports a *for each* style of looping over compound
+values.  ``for-each`` is a simple wrapper around ``map`` where ``map``
+collects results and ``for-each`` doesn't.
+
+They both take the form, :samp:`map {func} {list+}`, where
+:samp:`{func}` should take as many arguments as there are lists in
+:samp:`{list+}`.
 
 .. code-block:: idio
    :caption: :file:`simple-for-each.idio`

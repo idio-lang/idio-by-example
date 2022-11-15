@@ -99,7 +99,7 @@ Unicode code points.
         #B{ 65536 60:01111111 68-70 11100000 }
         #f #f #f #f #f #f #f #f #f #f #f #f #f #f #f #f ]>
 
-NB. The output has been chopped for readability.
+NB. The output has been edited for readability.
 
 For the ASCII-only variant you can see the bitset for the first plane
 is ``#B{ 65536 60:01111111 68-70 11100000 }`` which reads as bits from

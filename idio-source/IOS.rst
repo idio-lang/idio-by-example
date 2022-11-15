@@ -62,7 +62,7 @@ multiple dispatch page:
 
    printf "collide so5 so6: %s\n" (collide so5 so6)
 
-The output has been chopped for readability:
+The output has been edited for readability:
 
 .. code-block:: console
 

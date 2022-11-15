@@ -53,8 +53,8 @@ a number as a proxy for the string:
    :caption: :file:`accessor-sort.idio`
 
    strs := '("apple"
-   	  "banana"
-   	  "chocolate")
+             "banana"
+             "chocolate")
 
    printf "strs longest to shortest = %s\n" (sort strs \gt string-length)
 
