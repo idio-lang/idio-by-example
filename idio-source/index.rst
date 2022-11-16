@@ -57,10 +57,11 @@ language?
    IOS
    expect
    shasum
+   libc
 
-.. raw:: html
-
-   <hr>
+*****
+Shell
+*****
 
 .. toctree::
    :maxdepth: 1
