@@ -58,6 +58,7 @@ language?
    expect
    shasum
    libc
+   libcurl
 
 *****
 Shell
