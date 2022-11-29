@@ -52,10 +52,48 @@ GET Example
 
 .. code-block:: console
 
-   $ idio lc
+   $ idio libcurl-GET
    The webpage was 5453 chars
 
-For a PUT example, you would set ``:reader`` to a handle and set
-``:UPLOAD`` to true.
+As a slight spin on the above test, we could use a pipe handle for our
+writer and ``wc -c`` as the pipeline to achieve something similar:
+
+.. code-block:: idio
+   :caption: :file:`libcurl-pipe.idio`
+
+   import libcurl
+
+   curl := (curl-easy-init)
+
+   curl-easy-setopt curl :FOLLOWLOCATION #t
+   curl-easy-setopt curl :SSL_VERIFYHOST #f :SSL_VERIFYPEER #f
+   curl-easy-setopt curl :URL "https://idio-lang.org"
+
+   printf "wc -c: "
+
+   oph := pipe-into wc -c
+
+   curl-easy-setopt curl :writer oph
+
+   curl-easy-perform curl
+
+   ;; XXX curl does not close the writer and wc -c will be blocked
+   ;; reading stdin.
+   close-handle oph
+
+
+.. code-block:: console
+
+   $ idio libcurl-pipe
+   wc -c: 5464
+
+Why do the counts differ by one?  Sphinx has added a
+transiently-hidden Pilcrow, ¶ U+00B6, at the end of the title,
+**Idio**.  :lname:`Idio` was counting characters and :program:`wc` was
+counting bytes.  If your :program:`wc` supports it, you can try ``wc
+-m`` to count characters instead.
+
+For a PUT example, you would set ``:reader`` to an input handle and
+set ``:UPLOAD`` to true.
 
 .. include:: ./commit.rst
