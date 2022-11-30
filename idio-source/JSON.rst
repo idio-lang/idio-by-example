@@ -121,7 +121,7 @@ JSON5
 =====
 
 This time, we'll create a JSON5 hash table and only generate JSON5 (as
-the elements are beyond the capabilities of JSON).  and JSON from it.
+the elements are beyond the capabilities of JSON).
 
 .. code-block:: idio
    :caption: :file:`writing-json5.idio`
