@@ -59,6 +59,7 @@ language?
    shasum
    libc
    libcurl
+   zlib
 
 *****
 Shell
