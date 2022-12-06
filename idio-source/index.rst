@@ -60,6 +60,7 @@ language?
    libc
    libcurl
    zlib
+   sqlite3
 
 *****
 Shell
